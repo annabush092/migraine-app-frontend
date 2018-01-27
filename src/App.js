@@ -1,14 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
+import {connect} from 'react-redux'
 
-class App extends Component {
+class App extends React.Component {
   render() {
+    console.log("hi")
     return (
       <div className="App">
         Hello from App
+        <p>{this.props.user.name}</p>
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state){
+  return {
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps)(App);
