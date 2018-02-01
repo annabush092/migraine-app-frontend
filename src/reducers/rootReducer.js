@@ -1,4 +1,7 @@
-import {combineReducers, createStore} from 'redux'
+import {combineReducers, createStore, applyMiddleware} from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import thunk from 'redux-thunk';
+
 
 import {userReducer} from './userReducer.js'
 
@@ -8,6 +11,5 @@ const rootReducer = combineReducers({
 
 export const store = createStore(
   rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__&&
-  window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeWithDevTools(applyMiddleware(thunk.withExtraArgument({apiData, schema})))
 )
