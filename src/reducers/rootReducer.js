@@ -15,9 +15,9 @@ export const store = createStore(
 
 
 // Order of things:
-// Define schema
+// Define schema (for triggers and triggerLogs)
 // Call action to fetch user info from backend
-// Within .then(), normalize the res.json()
+// Within .then(), normalize the res.json() of the triggers and triggerLogs
 //     const data = normalize(response, [ schema.entity ]);
 // Then once you've normalized the data, use that in dispatch to add to the store.
 //     dispatch(addEntities(data.entities));

@@ -1,4 +1,4 @@
-function userReducer(state = {id: 1, name: "Anna"}, action) {
+function userReducer(state = {id: 0, username: "defaultUser", first_name: "Default"}, action) {
   switch(action.type) {
     case("INIT_USER"):
       return {...state, ...action.payload}

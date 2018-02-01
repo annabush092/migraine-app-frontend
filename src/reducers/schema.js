@@ -1,17 +1,14 @@
-import { normalize, schema } from 'normalizr';
+import { schema } from 'normalizr';
 
 // Define a triggers schema
-const trigger = new schema.Entity('triggers');
+export const trigger = new schema.Entity('triggers');
 
 // Define a triggerLogs schema
-const triggerLog = new schema.Entity('triggerLogs', {
+export const triggerLog = new schema.Entity('triggerLogs', {
   trigger: trigger;
 })
 
-const normalizedData = normalize(originalData, triggerLog)
-
-
-// example 
+// example
 // // Define your comments schema
 // const comment = new schema.Entity('comments', {
 //   commenter: user
