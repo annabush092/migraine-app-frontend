@@ -2,9 +2,16 @@ import React from 'react';
 import './App.css';
 import {connect} from 'react-redux'
 
+import {fetchInit} from './actions/fetchInit.js'
+
+
 class App extends React.Component {
+
+  componentDidMount() {
+    this.props.initializeStore({id: 1})
+  }
+
   render() {
-    console.log(`hi ${this.props.user.first_name}`)
     return (
       <div className="App">
         Hello from App
@@ -15,9 +22,18 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state){
+  console.log(`state in App: `, state)
   return {
     user: state.user
   }
 }
 
-export default connect(mapStateToProps)(App);
+function mapDispatchToProps(dispatch) {
+  return {
+    initializeStore: (userObj) => {
+      dispatch(fetchInit(userObj))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
