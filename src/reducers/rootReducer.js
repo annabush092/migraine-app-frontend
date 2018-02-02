@@ -1,8 +1,8 @@
 import {combineReducers, createStore, applyMiddleware} from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk';
-import { schema } from 'normalizr';
 
+import * as schema from './schema.js'
 import {userReducer} from './userReducer.js'
 import {migraineReducer} from './migraineReducer.js'
 import {triggerReducer} from './triggerReducer.js'
@@ -15,11 +15,11 @@ const rootReducer = combineReducers({
   triggerLogs: triggerLogReducer // [ ?? ]
 })
 
-
 export const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk.withExtraArgument({ schema })))
 )
+// Where is schema coming from in line 20? We need it to come from our defined schema in reducers/schema.js
 
 
 // Order of things:

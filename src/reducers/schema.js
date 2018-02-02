@@ -1,11 +1,11 @@
 import { schema } from 'normalizr';
 
 // Define a triggers schema
-export const trigger = new schema.Entity('triggers');
+export const trigger = new schema.Entity('triggers')
 
 // Define a triggerLogs schema
 export const triggerLog = new schema.Entity('triggerLogs', {
-  trigger: trigger;
+  trigger: trigger
 })
 
 // example
