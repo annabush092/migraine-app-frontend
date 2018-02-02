@@ -4,7 +4,7 @@ import {initUser} from './userActions.js'
 import {initMigraines} from './migraineActions.js'
 import {initTriggers} from './triggerActions.js'
 import {initTriggerLogs} from './triggerLogActions.js'
-import {trigger, triggerLog} from '../reducers/schema.js'
+import {trigger} from '../reducers/schema.js'
 
 export function fetchInit(userObj) {
   return function(dispatch) {
@@ -14,11 +14,9 @@ export function fetchInit(userObj) {
       dispatch(initUser({id: json.id, username: json.username, firstName: json.first_name}))
       dispatch(initMigraines(json.migraines))
 
-      let normTriggerLogs = normalize(json.trigger_logs, [triggerLog])
-      dispatch(initTriggerLogs(normTriggerLogs))
-
       let normTriggers = normalize(json.triggers, [trigger])
-      dispatch(initTriggers(normTriggers))
+      dispatch(initTriggers(normTriggers.entities.triggers))
+      dispatch(initTriggerLogs(normTriggers.entities.trigger_logs))
     })
   }
 }
