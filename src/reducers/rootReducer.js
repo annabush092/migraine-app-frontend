@@ -3,10 +3,17 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk';
 
 import {userReducer} from './userReducer.js'
+import {migraineReducer} from './migraineReducer.js'
+import {triggerReducer} from './triggerReducer.js'
+import {triggerLogReducer} from './triggerLogReducer.js'
 
 const rootReducer = combineReducers({
-  user: userReducer
+  user: userReducer, //{id: , username: "", firstName: ""}
+  migraines: migraineReducer, //[ {id: , severity: , start: }, {}, {} ]
+  triggers: triggerReducer, // [ ?? ]
+  triggerLogs: triggerLogReducer // [ ?? ]
 })
+
 
 export const store = createStore(
   rootReducer,

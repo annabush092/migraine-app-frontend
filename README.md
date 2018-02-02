@@ -1,9 +1,5 @@
 # migraine-app-frontend
 
-NEXT STEP:
-write reducers, put into root reducer, make sure they match what you are receiving from fetchInit.
-
-
 Front-end:
 Several page app:
 - Login screen- once logged in, they should stay logged in for easy access

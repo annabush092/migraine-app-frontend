@@ -1,6 +1,6 @@
-export function initActions(payload) {
+export function initTriggers(payload) {
   return {
-    type: 'INIT_ACTIONS',
+    type: 'INIT_TRIGGERS',
     payload: payload
   }
 }
