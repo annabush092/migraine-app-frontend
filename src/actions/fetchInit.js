@@ -4,10 +4,10 @@ import {initUser} from './userActions.js'
 import {initMigraines} from './migraineActions.js'
 import {initTriggers} from './triggerActions.js'
 import {initTriggerLogs} from './triggerLogActions.js'
-import {schema} from '../reducers/schema.js'
+// import {schema} from '../reducers/schema.js'
 
 export function fetchInit(userObj) {
-  return function(dispatch) {
+  return function(dispatch, setState, schema) {
     fetch(`http://localhost:3000/api/v1/users/${userObj.id}`)
     .then(res => res.json())
     .then(json => {
