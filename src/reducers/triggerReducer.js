@@ -1,8 +1,8 @@
-export function triggerReducer(state = [], action) {
+export function triggerReducer(state = {}, action) {
   switch(action.type) {
     case("INIT_TRIGGERS"):
       console.log("normalized trigger data: ", action.payload)
-      return [...state, ...action.payload]
+      return {...state, ...action.payload.entities.triggers}
     default:
       return state;
   }

@@ -17,15 +17,5 @@ const rootReducer = combineReducers({
 
 export const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(thunk.withExtraArgument({ schema })))
+  composeWithDevTools(applyMiddleware(thunk.withExtraArgument(schema)))
 )
-// Where is schema coming from in line 20? We need it to come from our defined schema in reducers/schema.js
-
-
-// Order of things:
-// Define schema (for triggers and triggerLogs)
-// Call action to fetch user info from backend
-// Within .then(), normalize the res.json() of the triggers and triggerLogs
-//     const data = normalize(response, [ schema.entity ]);
-// Then once you've normalized the data, use that in dispatch to add to the store.
-//     dispatch(addEntities(data.entities));
