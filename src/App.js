@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux'
 
-import '../styles/App.css';
-import {fetchInit} from '../actions/fetchInit.js'
+import './styles/App.css';
+import {fetchInit} from './actions/fetchInit.js'
+import TriggerContainer from './components/triggerContainer.js'
 
 
 class App extends React.Component {
@@ -16,8 +17,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        Hello from App
-        <p>{this.props.user.firstName}</p>
+        Hello, {this.props.user.firstName}
+        <TriggerContainer/>
       </div>
     );
   }
