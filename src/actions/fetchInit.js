@@ -4,7 +4,7 @@ import {initUser} from './userActions.js'
 import {initMigraines} from './migraineActions.js'
 import {initTriggers} from './triggerActions.js'
 import {initTriggerLogs} from './triggerLogActions.js'
-import {trigger} from '../reducers/schema.js'
+import {trigger} from '../schema.js'
 
 export function fetchInit(userObj) {
   return function(dispatch) {

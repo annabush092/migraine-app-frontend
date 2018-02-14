@@ -1,13 +1,15 @@
 import React from 'react';
-import './App.css';
 import {connect} from 'react-redux'
 
-import {fetchInit} from './actions/fetchInit.js'
+import '../styles/App.css';
+import {fetchInit} from '../actions/fetchInit.js'
 
 
 class App extends React.Component {
 
   componentDidMount() {
+    // This needs to be modified to allow users to log in
+    // current default user is id: 1
     this.props.initializeStore({id: 1})
   }
 
@@ -15,14 +17,13 @@ class App extends React.Component {
     return (
       <div className="App">
         Hello from App
-        <p>{this.props.user.first_name}</p>
+        <p>{this.props.user.firstName}</p>
       </div>
     );
   }
 }
 
 function mapStateToProps(state){
-  console.log(`state in App: `, state)
   return {
     user: state.user
   }

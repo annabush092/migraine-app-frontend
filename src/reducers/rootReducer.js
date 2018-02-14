@@ -2,7 +2,7 @@ import {combineReducers, createStore, applyMiddleware} from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk';
 
-import * as schema from './schema.js'
+import * as schema from '../schema.js'
 import {userReducer} from './userReducer.js'
 import {migraineReducer} from './migraineReducer.js'
 import {triggerReducer} from './triggerReducer.js'
