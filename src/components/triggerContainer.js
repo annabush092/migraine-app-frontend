@@ -19,7 +19,6 @@ class TriggerContainer extends React.Component {
   render() {
     return (
       <div>
-        Hello from TriggerContainer
         {this.renderTriggers()}
         <NewTriggerButton/>
       </div>
